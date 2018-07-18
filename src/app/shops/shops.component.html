@@ -8,7 +8,7 @@
         <img class="card-img-top" src={{data.image}} width="250" height="250">
         <div class="card-body" style="text-align: center">
           <h5 class="card-title" style = "text-align: center">{{data.title}}</h5>
-          <a href={{i}} class="btn btn-primary">Add to Cart</a>
+          <a class="btn btn-primary" (click)="addtocart(i)">Add to Cart</a>
         </div>
       </div>
     </div>

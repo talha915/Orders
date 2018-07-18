@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { CommonComponent } from './common/common.component';
 import { ShopsComponent } from './shops/shops.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdminComponent,
     CommonComponent,
     ShopsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ShopsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'Shopsdetails',
+        component: ShopsDetailsComponent
       }
     ])
   ],
