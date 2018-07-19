@@ -10,8 +10,8 @@ import { CommonComponent } from './common/common.component';
 import { ShopsComponent } from './shops/shops.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopsDetailsComponent } from './shops-details/shops-details.component';
-
-
+import { UserService } from './user.service';
+import { AuthguardGuard } from './authguard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import { ShopsDetailsComponent } from './shops-details/shops-details.component';
       },
       {
         path: 'Shops',
-        component: ShopsComponent
+        component: ShopsComponent,
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'admin',
@@ -49,11 +50,12 @@ import { ShopsDetailsComponent } from './shops-details/shops-details.component';
       },
       {
         path: 'Shopsdetails',
-        component: ShopsDetailsComponent
+        component: ShopsDetailsComponent,
+        canActivate: [AuthguardGuard]
       }
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-client',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ClientComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private user: UserService) { }
   public isLoggedIn = false;
   public email;
   public password;
@@ -20,7 +22,7 @@ export class ClientComponent implements OnInit {
   login() {
     if(this.email === this.client_useremail && this.password === this.client_password) {
       this.isLoggedIn = !this.isLoggedIn;
-      console.log("User Logged In ? :", this.isLoggedIn);
+      this.user.setUserLoggedIn();
       this.router.navigateByUrl("/Shops");
     }
     else{
