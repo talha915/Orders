@@ -2,7 +2,7 @@
     float:none;
 }
 
-.container {
+.containers {
   position: relative;
 }
 
@@ -23,4 +23,12 @@ button{
 
 div {
   cursor: pointer;
+}
+
+.containerButtons{
+  visibility: hidden;
+}
+
+.containers:hover > .containerButtons{
+  visibility: visible;
 }
