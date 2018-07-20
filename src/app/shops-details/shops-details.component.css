@@ -10,3 +10,12 @@
 .footer{
     margin-top: 50px;
 }
+
+button {
+    margin-top: 10px;
+    width: 195px;
+}
+
+button:hover{
+    background-color: rgba(0, 89, 255, 0.856);
+}

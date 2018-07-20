@@ -6,19 +6,9 @@
   position: relative;
 }
 
-.text-block {
-  position: absolute;
-  bottom: 5px;
-  right: 20px;
-  background-color: transparent;
-  color: white;
-  /* padding-left: 20px; */
-  float: left;
-  padding-right: 30px;
-}
-
 button{
   margin-left: 8px;
+  background-color: gray;
 }
 
 div {
@@ -31,4 +21,12 @@ div {
 
 .containers:hover > .containerButtons{
   visibility: visible;
+}
+
+i {
+  color: white;
+}
+
+button:hover{
+  background-color: black;
 }

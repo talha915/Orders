@@ -3,10 +3,10 @@
     SHOP PAGE
   </h1>
   <div class="row">
-    <div class="col-md-4" *ngFor="let data of shopData; let i =index">
-      <div class="card" style="width: 18rem;" (click)="addtocart(i)">
+    <div class="col-md-3" *ngFor="let data of shopData; let i =index">
+      <div class="card" style="width: 18rem; border: none;" (click)="addtocart(i)">
         <div class="containers">
-          <img class="card-img-top" src={{data.image}} width="250" height="250">
+          <img class="card-img-top" src={{data.image}} width="250" height="300">
           <div class="containerButtons">
             <button type="button" class="btn btn-default btn-sm">
               <i class="fa fa-search"></i>
@@ -18,7 +18,7 @@
               <i class="fa fa-heart-o"></i>
             </button>
             <button type="button" class="btn btn-default btn-sm">
-              <i class="fa fa-shopping-cart"></i> ADD TO CART
+              <i class="fa fa-shopping-cart">  ADD TO CART</i> 
             </button>
           </div>
         </div>

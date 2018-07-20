@@ -28,6 +28,9 @@
       <h5>
         {{ShopIndex.title}}
       </h5>
+      <p>
+        SKU: {{ShopIndex.SKU}}
+      </p>
       <h6>
         {{ShopIndex.price}}
       </h6>
@@ -36,14 +39,21 @@
           {{ShopIndex.Description}}
         </p>
       </h6>
+      <h5>
+        Quantity
+      </h5>
+
+      <input type="number">
+      <br/>
+      <button type="submit" class="btn btn-dark btn-lg ">
+          <i class="fa fa-shopping-cart"></i> ADD TO CART
+      </button>
+
       <p class="footer">
-        SKU: {{ShopIndex.SKU}}
+        Category: {{ShopIndex.category}}
       </p>
       <p>
-          Category: {{ShopIndex.category}}
-      </p>
-      <p>
-          Tags: {{ShopIndex.Tag}}
+        Tags: {{ShopIndex.Tag}}
       </p>
     </div>
   </div>
