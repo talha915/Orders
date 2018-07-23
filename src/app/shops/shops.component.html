@@ -3,8 +3,8 @@
     SHOP PAGE
   </h1>
   <div class="row">
-    <div class="col-md-3" *ngFor="let data of shopData; let i =index">
-      <div class="card" style="width: 18rem; border: none;" (click)="addtocart(i)">
+    <div class="col-md-3" *ngFor="let data of shopData; let i =index" >
+      <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
         <div class="containers">
           <img class="card-img-top" src={{data.image}} width="250" height="300">
           <div class="containerButtons">

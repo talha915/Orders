@@ -20,11 +20,45 @@
 <div class="container containerStyle">
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
+      <img src="{{ShopIndex.image}}" width="100" height="100">
+      <img src="{{ShopIndex.image}}" width="100" height="100">
+      <img src="{{ShopIndex.image}}" width="100" height="100">
+    </div>
+    <div class="col-md-6">
       <img src="{{ShopIndex.image}}" width="400" height="400">
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-6 title">
+    <div class="col-md-4">
+      <b>
+        {{ShopIndex.title}}
+      </b>
+      <p>
+        SKU: {{ShopIndex.SKU}}
+      </p>
+      <b>
+        {{ShopIndex.price}}
+      </b>
+      <p>
+        {{ShopIndex.Description}}
+      </p>
+      <h5>
+        Quantity
+      </h5>
+      <input type="number">
+      <button type="submit" class="btn btn-dark btn-lg ">
+        <i class="fa fa-shopping-cart"></i> ADD TO CART
+      </button>
+      <p class="footer">
+        Category: {{ShopIndex.category}}
+      </p>
+      <p>
+        Tags: {{ShopIndex.Tag}}
+      </p>
+    </div>
+    <!-- <div class="col-md-3">
+      <img src="{{ShopIndex.image}}" width="300" height="400">
+    </div>
+    <div class="col-md-7 title">
       <h5>
         {{ShopIndex.title}}
       </h5>
@@ -56,6 +90,6 @@
         Tags: {{ShopIndex.Tag}}
       </p>
     </div>
-  </div>
+  </div> -->
 
 </div>
