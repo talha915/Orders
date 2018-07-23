@@ -44,25 +44,64 @@
             In Stock
         </span>
       </p>
+      <p>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span >
+          &nbsp;
+          <a href="#" style="color: #555555">
+            4 Reviews
+          </a>
+          &nbsp;
+          <a href="#" style="color: #555555">
+            Email to a friend
+          </a>
+        </span>
+      </p>
       <b>
         {{ShopIndex.price}}
       </b><br/>
       <p>
-        {{ShopIndex.Description}}
+        <span style="color: #555555">
+          {{ShopIndex.Description}}
+        </span>     
       </p>
       <h5>
         Quantity
       </h5>
       <input type="number" min="1" value="1">
-      <button type="submit" class="btn btn-dark btn-lg ">
-        <i class="fa fa-shopping-cart"></i> ADD TO CART
-      </button>
+      <span >
+        <button type="submit" class="btn btn-dark btn-lg ">
+          <i class="fa fa-shopping-cart"></i> ADD TO CART
+        </button>
+        <button type="button" class="btn btn-default btn-lg">
+          <i class="fa fa-heart-o"></i>
+        </button>
+        <button type="button" class="btn btn-default btn-lg">
+          <i class="fa fa-retweet"></i>
+        </button>
+      </span>
+      
       <p class="footer">
         Category: {{ShopIndex.category}}
       </p>
       <p>
         Tags: {{ShopIndex.Tag}}
       </p>
+      <b>
+        Share: 
+        <span>
+            <i class="fa fa-facebook"></i>&nbsp;
+            <i class="fa fa-twitter"></i>&nbsp;
+            <i class="fa fa-pinterest"></i>&nbsp;
+            <i class="fa fa-google-plus"></i>&nbsp;
+            <i class="fa fa-linkedin"></i>&nbsp;
+            <i class="fa fa-reddit"></i>
+        </span>
+      </b>
     </div>
     <!-- <div class="col-md-3">
       <img src="{{ShopIndex.image}}" width="300" height="400">
@@ -101,4 +140,47 @@
     </div>
   </div> -->
 
+
+
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-default accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Description
+          </button>
+          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Additional Information
+          </button>
+          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+            REVIEWS (1)
+          </button>
+          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+            Custom TAB
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          Description
+        </div>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          Additional Information
+        </div>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          REVIEWS
+        </div>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body">
+          CUSTOM TAB
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

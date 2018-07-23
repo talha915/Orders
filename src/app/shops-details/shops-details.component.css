@@ -11,15 +11,20 @@
     margin-top: 50px;
 }
 
-button {
+button[type=submit] {
     margin-top: 10px;
     width: 195px;
     border-radius: 0px;
 }
 
+button {
+    border-radius: 0px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
 button:hover{
     background-color: #27af7d;
-    border: 1px solid #27af7d;
 }
 
 input[type=number] {
@@ -37,6 +42,7 @@ b{
 p{
     font-family: Poppins;
 }
+
 h1{
     font-family: Poppins;
     font-size: 24px;
@@ -49,3 +55,40 @@ sku{
     display: inline-block;
     font-weight: normal;
 }
+
+.checked {
+    color: orange;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #27af7d;
+}
+
+i{
+    color: grey;
+}
+
+.containers{
+    position: relative;
+    background-color: white;
+    height: 25px;
+}
+
+.containers:hover{
+    background-color: #27af7d;
+}
+
+.accordion-btn{
+    padding: 20px; 
+}
+
+.accordion-btn:hover{
+    color: white;
+}
+
+.accordion-btn:active{
+    background-color: #27af7d;
+    color: white;
+}
+
