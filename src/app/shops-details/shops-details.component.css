@@ -14,8 +14,38 @@
 button {
     margin-top: 10px;
     width: 195px;
+    border-radius: 0px;
 }
 
 button:hover{
-    background-color: rgba(0, 89, 255, 0.856);
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+}
+
+input[type=number] {
+    opacity: 0.5;
+}
+
+input[type=number]:hover {
+    opacity: 1;
+}
+
+b{
+    font-family: Poppins;
+}
+
+p{
+    font-family: Poppins;
+}
+h1{
+    font-family: Poppins;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+sku{
+    padding: 0 0 0 3px;
+    display: inline-block;
+    font-weight: normal;
 }

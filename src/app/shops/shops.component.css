@@ -7,8 +7,9 @@
 }
 
 button{
-  margin-left: 8px;
-  background-color: gray;
+  margin-left: 2px;
+  background-color: white;
+  border-radius: 0px;
 }
 
 div {
@@ -17,16 +18,24 @@ div {
 
 .containerButtons{
   visibility: hidden;
+  margin-left: 8px;
 }
 
-.containers:hover > .containerButtons{
-  visibility: visible;
-}
 
 i {
-  color: white;
+  color: grey;  
+  font-weight: 2;
+  font-size: 14px;
 }
 
 button:hover{
   background-color: black;
+}
+
+button:hover > i{
+  color: wheat;
+}
+
+.card-img-overlay:hover > .containerButtons{
+  visibility: visible;
 }

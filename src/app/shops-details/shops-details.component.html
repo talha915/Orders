@@ -26,25 +26,34 @@
       <img src="{{ShopIndex.image}}" width="100" height="100">
     </div>
     <div class="col-md-6">
-      <img src="{{ShopIndex.image}}" width="400" height="400">
+      <img src="{{ShopIndex.image}}" width="400" height="500">
     </div>
     <div class="col-md-4">
-      <b>
+      <h1>
         {{ShopIndex.title}}
-      </b>
+      </h1>
       <p>
-        SKU: {{ShopIndex.SKU}}
+        SKU: 
+        <span style="color: #555555">
+            {{ShopIndex.SKU}}
+        </span>
+      </p>
+      <p>
+        Availability: 
+        <span style="color: #555555">
+            In Stock
+        </span>
       </p>
       <b>
         {{ShopIndex.price}}
-      </b>
+      </b><br/>
       <p>
         {{ShopIndex.Description}}
       </p>
       <h5>
         Quantity
       </h5>
-      <input type="number">
+      <input type="number" min="1" value="1">
       <button type="submit" class="btn btn-dark btn-lg ">
         <i class="fa fa-shopping-cart"></i> ADD TO CART
       </button>

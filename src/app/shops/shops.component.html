@@ -5,7 +5,8 @@
   <div class="row">
     <div class="col-md-3" *ngFor="let data of shopData; let i =index" >
       <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
-        <div class="containers">
+        
+        <!-- <div class="containers">
           <img class="card-img-top" src={{data.image}} width="250" height="300">
           <div class="containerButtons">
             <button type="button" class="btn btn-default btn-sm">
@@ -21,8 +22,50 @@
               <i class="fa fa-shopping-cart">  ADD TO CART</i> 
             </button>
           </div>
+        </div> -->
+        
+        <div class="containers">
+          <div class="card card-inverse " style="max-width: 350px;border:none">
+            <img class="card-img-top" src={{data.image}} width="250" height="300" >
+            <div class="card-img-overlay" >
+
+              <!-- <h4 class="card-title" style="margin-top: 190px">
+                What Next?
+              </h4>
+              <p class="card-text">Is this the end?</p> -->
+
+              <div class="containerButtons" style="margin-top: 245px;">
+                <button type="button" class="btn btn-default btn-sm">
+                  <i class="fa fa-search"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <i class="fa fa-retweet"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" style="font-family: Poppins; ">
+                  <i class="fa fa-shopping-cart"> ADD TO CART</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body" style="text-align: center; ">
+            <p style="color: grey">
+              {{data.title}}
+            </p>
+            <p>
+              {{data.Tag}}
+            </p>
+            <p>
+              <b>
+                {{data.price}}
+              </b>
+            </p>
+          </div>
         </div>
-        <div class="card-body" style="text-align: center; ">
+
+        <!-- <div class="card-body" style="text-align: center; ">
           <p style="color: grey">
             {{data.title}}
           </p>
@@ -34,11 +77,13 @@
               {{data.price}}
             </b>
           </p>
-        </div>
+        </div> -->
+
         <!-- <div class="card-body" style="text-align: center">
           <h5 class="card-title" style="text-align: center">{{data.title}}</h5>
           <a class="btn btn-primary" (click)="addtocart(i)">Add to Cart</a>
         </div> -->
+      
       </div>
     </div>
   </div>
