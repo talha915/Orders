@@ -8,12 +8,12 @@
 }
 
 .footer{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 button[type=submit] {
     margin-top: 10px;
-    width: 195px;
+    width: 208px;
     border-radius: 0px;
 }
 
@@ -29,19 +29,21 @@ button:hover{
 }
 
 input[type=number] {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 input[type=number]:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 b{
     font-family: Poppins;
+    font-size: 15px;
 }
 
 p{
     font-family: Poppins;
+    font-size: 15px;
 }
 
 h1{
@@ -58,11 +60,18 @@ sku{
 }
 
 .checked {
-    color: orange;
+    color: yellow;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+.unchecked {
+    color: yellow;
+    font-size: 11px;
+    margin-left: 4px;
 }
 
 a:hover{
-    text-decoration: none;
     color: #27af7d;
 }
 
@@ -70,7 +79,11 @@ i {
     color: gray;  
     font-weight: 2;
     font-size: 14px;
-  }
+}
+
+i:hover{
+    cursor: pointer;
+}
 
 .containers{
     position: relative;
@@ -90,11 +103,23 @@ i {
     color: white;
 }
 
-.accordion-btn:active{
-    background-color: #27af7d;
-    color: white;
-}
 
 button:hover > i{
     color: white;
+}
+
+a{
+    color: #555555; 
+    font-size: 15px; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tag:hover {
+    cursor: pointer;
+    color: #27af7d;
+}
+
+span>i:hover {
+    color: #27af7d;
 }

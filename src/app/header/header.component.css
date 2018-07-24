@@ -1,0 +1,24 @@
+p {
+    color: #a9a9a9;
+    padding-top: 13px;
+    font-size: 13px;
+}
+
+span{
+    color: #27af7d;
+    cursor: pointer;
+    padding-top: 13px;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+i {
+    color: #a9a9a9;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+i:hover{
+    color: #27af7d;
+}
+

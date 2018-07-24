@@ -23,4 +23,7 @@ export class ShopsDetailsComponent implements OnInit {
     console.log("ShopIndex", this.ShopIndex);
   }
 
+  btnchange(){
+    console.log("Change Color");
+  }
 }

@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { AuthguardGuard } from './authguard.guard';
     CommonComponent,
     ShopsComponent,
     DashboardComponent,
-    ShopsDetailsComponent
+    ShopsDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
