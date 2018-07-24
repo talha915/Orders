@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" >UP STORE</a>
@@ -13,13 +13,20 @@
       </span>
     </div>
   </div>
-</nav> 
+</nav>  -->
+
+<nav class="navbar navbar-default navbar-sticky-top" >
+  <div class="container">
+    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25">UP<span style="color:aqua; font-size: 25px">.</span>STORE</a>
+    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25; margin-right: 510px">SHOP</a>
+  </div>
+</nav>
 
 
 <div class="container">
-  <h1 style="text-align: center">
+  <!-- <h1 style="text-align: center">
     SHOP PAGE
-  </h1>
+  </h1> -->
   <div class="row">
     <div class="col-md-3" *ngFor="let data of shopData; let i =index" >
       <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
