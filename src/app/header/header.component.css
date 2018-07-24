@@ -22,3 +22,11 @@ i:hover{
     color: #27af7d;
 }
 
+.navs {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navs:hover {
+    color: #27af7d; 
+}
