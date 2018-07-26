@@ -51,7 +51,7 @@ import { HeaderComponent } from './header/header.component';
         component: DashboardComponent
       },
       {
-        path: 'Shopsdetails',
+        path: 'ShopsDetails/:slug',
         component: ShopsDetailsComponent,
         canActivate: [AuthguardGuard]
       }

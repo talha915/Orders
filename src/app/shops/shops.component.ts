@@ -23,9 +23,9 @@ export class ShopsComponent implements OnInit {
   }
 
   addtocart(index){
-    this.router.navigateByUrl("/Shopsdetails")
     this.service.setData(index);
     console.log("Index: ", index);
+    this.router.navigateByUrl('ShopsDetails/' + index);
   }
 
 }

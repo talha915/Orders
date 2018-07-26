@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShopsService } from '../Services/shops.service';
 import { shop } from '../Data/Shop';
 import { HeaderComponent } from '../header/header.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shops-details',
@@ -16,13 +17,22 @@ export class ShopsDetailsComponent implements OnInit {
   public isClicked1 = false;
   public isClicked2 = false;
   public isClicked3 = false;
-  constructor(public service: ShopsService) {
+  constructor(public service: ShopsService, private route: ActivatedRoute) {
     this.data = this.service.getData();
     this.shopData = shop; 
     this.ShopIndex = this.shopData[this.data];
+
+    this.route.params.subscribe(params=>{
+      console.log("Params....", params);
+    })
+    
    }
 
   ngOnInit() {
+
+    
+
+
     console.log("Datttta", this.data);
     console.log("SHOPDATA...>>", this.shopData);
     console.log("ShopIndex", this.ShopIndex);
