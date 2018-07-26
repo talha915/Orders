@@ -53,7 +53,7 @@ import { HeaderComponent } from './header/header.component';
       {
         path: 'Shopsdetails',
         component: ShopsDetailsComponent,
-        canActivate: [AuthguardGuard]
+        canActivateChild: [AuthguardGuard]
       }
     ])
   ],

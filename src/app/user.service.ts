@@ -11,11 +11,21 @@ export class UserService {
   }
 
   setUserLoggedIn(){
-    this.isUserLoggedIn = true;
+    localStorage.setItem('login', 'True')
+  }
+
+  logout(){
+    localStorage.removeItem('login')
   }
 
   getUserLoggedIn(){
-    return this.isUserLoggedIn;
+    let variable = localStorage.getItem('login')
+    if (variable){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 }
