@@ -23,7 +23,12 @@ button {
     margin-left: 2px;
 }
 
-button:hover{
+button[type=submit]:hover{
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+}
+
+button[type=button]:hover {
     background-color: #27af7d;
     border: 1px solid #27af7d;
 }
@@ -37,17 +42,17 @@ input[type=number]:hover {
 }
 
 b{
-    font-family: Poppins;
+    font-family: ubuntu, sans-serif;
     font-size: 15px;
 }
 
 p{
-    font-family: Poppins;
+    font-family: ubuntu, sans-serif;
     font-size: 15px;
 }
 
 h1{
-    font-family: Poppins;
+    font-family: ubuntu, sans-serif;
     font-size: 24px;
     line-height: 32px;
     font-weight: 400;
@@ -78,7 +83,7 @@ a:hover{
 i {
     color: gray;  
     font-weight: 2;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 i:hover{
@@ -122,4 +127,20 @@ a{
 
 span>i:hover {
     color: #27af7d;
+}
+
+.success {
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+    color: white;
+}
+
+.danger {
+    background-color: azure;
+    color: black;
+}
+
+.danger:hover {
+    background-color: #27af7d;
+    color: white;
 }

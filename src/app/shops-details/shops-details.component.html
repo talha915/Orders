@@ -16,6 +16,7 @@
 </div> -->
 
 <app-header></app-header>
+
 <!-- <nav class="navbar navbar-default navbar-sticky-top" >
   <div class="container">
     <a class="navbar-brand" style="font-family: Poppins; font-weight: 25">UP<span style="color:aqua; font-size: 25px">.</span>STORE</a>
@@ -26,6 +27,7 @@
 <!-- <h2 style="text-align: center; margin-top: 20px">
   SHOP DETAILS
 </h2> -->
+
 <div class="container containerStyle">
 
   <div class="row">
@@ -80,7 +82,7 @@
       </b><br/>
       <input type="number" step="1" min="1" value="1" style="padding-left: 15px; margin-top: 3px;">
       <span >
-        <button type="submit" class="btn btn-dark btn-lg " style="font-family: Poppins; font-size: 15px;">
+        <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;">
           <i class="fa fa-shopping-cart" style="color: white;"></i> ADD TO CART
         </button>
         <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px">
@@ -152,16 +154,16 @@
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
-          <button class="btn btn-default accordion-btn "  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-default accordion-btn " style="font-family: ubuntu, sans-serif" (click)="check()" [ngClass]="isClicked? 'success' : 'danger'"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Description
           </button>
-          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif"  data-toggle="collapse" (click)="check1()" [ngClass]="isClicked1? 'success' : 'danger'" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             Additional Information
           </button>
-          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check2()" [ngClass]="isClicked2? 'success' : 'danger'" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             REVIEWS (1)
           </button>
-          <button class="btn btn-default collapsed accordion-btn" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif"  data-toggle="collapse" (click)="check3()" [ngClass]="isClicked3? 'success' : 'danger'" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             Custom TAB
           </button>
         </h5>
