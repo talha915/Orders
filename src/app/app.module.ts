@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import {ScrollToModule} from 'ng2-scroll-to';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './client/client.component';
@@ -55,7 +57,9 @@ import { HeaderComponent } from './header/header.component';
         component: ShopsDetailsComponent,
         canActivate: [AuthguardGuard]
       }
-    ])
+    ]),
+    Ng4LoadingSpinnerModule.forRoot(),
+    ScrollToModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

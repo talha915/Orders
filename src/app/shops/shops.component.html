@@ -1,116 +1,49 @@
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" >UP STORE</a>
-      <span style="margin-left: 510px">
-          <a class="navbar-brand" >Home</a>
-          <a class="navbar-brand" >Pages</a>
-          <a class="navbar-brand" >Blogs</a>
-          <a class="navbar-brand" >Portfolio</a>
-          <a class="navbar-brand" >Shop</a>
-          <a class="navbar-brand" >ShortCode</a>
-          <a class="navbar-brand" >Contact Us</a>
-      </span>
-    </div>
-  </div>
-</nav>  -->
-
-<app-header></app-header>
-<!-- <nav class="navbar navbar-default navbar-sticky-top" >
-  <div class="container">
-    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25">UP<span style="color:aqua; font-size: 25px">.</span>STORE</a>
-    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25; margin-right: 510px">SHOP</a>
-  </div>
-</nav> -->
-
-
-<div class="container">
-  <!-- <h1 style="text-align: center">
-    SHOP PAGE
-  </h1> -->
-  <div class="row">
-    <div class="col-md-3" *ngFor="let data of shopData; let i =index" >
-      <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
-        
-        <!-- <div class="containers">
-          <img class="card-img-top" src={{data.image}} width="250" height="300">
-          <div class="containerButtons">
-            <button type="button" class="btn btn-default btn-sm">
-              <i class="fa fa-search"></i>
-            </button>
-            <button type="button" class="btn btn-default btn-sm">
-              <i class="fa fa-times"></i>
-            </button>
-            <button type="button" class="btn btn-default btn-sm">
-              <i class="fa fa-heart-o"></i>
-            </button>
-            <button type="button" class="btn btn-default btn-sm">
-              <i class="fa fa-shopping-cart">  ADD TO CART</i> 
-            </button>
-          </div>
-        </div> -->
-        
-        <div class="containers">
-          <div class="card card-inverse " style="max-width: 350px;border:none">
-            <img class="card-img-top" src={{data.image}} width="250" height="300" >
-            <div class="card-img-overlay" >
-
-              <!-- <h4 class="card-title" style="margin-top: 190px">
-                What Next?
-              </h4>
-              <p class="card-text">Is this the end?</p> -->
-
-              <div class="containerButtons" style="margin-top: 245px;">
-                <button type="button" class="btn btn-default btn-sm">
-                  <i class="fa fa-search"></i>
-                </button>
-                <button type="button" class="btn btn-default btn-sm">
-                  <i class="fa fa-retweet"></i>
-                </button>
-                <button type="button" class="btn btn-default btn-sm">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-default btn-sm" style="font-family: ubuntu, sans-serif; ">
-                  <i class="fa fa-shopping-cart"> ADD TO CART</i>
-                </button>
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div *ngIf="mytick>=4">
+  <app-header id ="top"></app-header>
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-3" *ngFor="let data of shopData; let i =index">
+        <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
+          <div class="containers">
+            <div class="card card-inverse " style="max-width: 350px;border:none">
+              <img class="card-img-top" src={{data.image}} width="250" height="300">
+              <div class="card-img-overlay">
+                <div class="containerButtons" style="margin-top: 245px;">
+                  <button type="button" class="btn btn-default btn-sm">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm">
+                    <i class="fa fa-retweet"></i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm">
+                    <i class="fa fa-heart-o"></i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm" style="font-family: ubuntu, sans-serif; ">
+                    <i class="fa fa-shopping-cart"> ADD TO CART</i>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-body" style="text-align: center; ">
-            <p style="color: grey; font-family: ubuntu, sans-serif;">
-              {{data.title}}
-            </p>
-            <p style="font-family: ubuntu, sans-serif;">
-              {{data.Tag}}
-            </p>
-            <p>
-              <b style="font-family: ubuntu, sans-serif;">
-                {{data.price}}
-              </b>
-            </p>
+            <div class="card-body" style="text-align: center; ">
+              <p style="color: grey; font-family: ubuntu, sans-serif;">
+                {{data.title}}
+              </p>
+              <p style="font-family: ubuntu, sans-serif;">
+                {{data.Tag}}
+              </p>
+              <p>
+                <b style="font-family: ubuntu, sans-serif;">
+                  {{data.price}}
+                </b>
+              </p>
+            </div>
           </div>
         </div>
-
-        <!-- <div class="card-body" style="text-align: center; ">
-          <p style="color: grey">
-            {{data.title}}
-          </p>
-          <p>
-            {{data.Tag}}
-          </p>
-          <p>
-            <b>
-              {{data.price}}
-            </b>
-          </p>
-        </div> -->
-
-        <!-- <div class="card-body" style="text-align: center">
-          <h5 class="card-title" style="text-align: center">{{data.title}}</h5>
-          <a class="btn btn-primary" (click)="addtocart(i)">Add to Cart</a>
-        </div> -->
-      
       </div>
     </div>
   </div>
+  <a type="button" href="{{pageurl.url}}#top" class="btn btn-dark" >
+    <i class="fa fa-arrow-up"></i>
+  </a>
 </div>

@@ -6,6 +6,9 @@
           <div class="container">
             <form class="form-horizontal formContainer" style="margin-top: 50px">
               <h2 style = "text-align: center">Login</h2>
+              <span style="color: red; font-family: ubuntu">
+                {{success}}
+              </span>
               <div class="form-group " style="margin-top: 30px">
                 <div class="col-sm-10" style="margin-left: 20px">
                   <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required [(ngModel)]="email">

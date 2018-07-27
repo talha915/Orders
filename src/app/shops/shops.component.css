@@ -39,3 +39,7 @@ button:hover > i{
 .card-img-overlay:hover > .containerButtons{
   visibility: visible;
 }
+
+a {
+  float: right;
+}

@@ -1,39 +1,13 @@
-<!-- <div class="container" >
-  <h1 style="text-align: center">
-    SHOP Details
-  </h1>
-  <div class="row">
-    <div class="col-md-12" >
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src={{ShopIndex.image}} width="250" height="250">
-        <div class="card-body" style="text-align: center">
-          <h5 class="card-title" style = "text-align: center">{{ShopIndex.title}}</h5>
-          <p>{{ShopIndex.Description}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<app-header></app-header>
-
-<!-- <nav class="navbar navbar-default navbar-sticky-top" >
-  <div class="container">
-    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25">UP<span style="color:aqua; font-size: 25px">.</span>STORE</a>
-    <a class="navbar-brand" style="font-family: Poppins; font-weight: 25; margin-right: 510px">SHOP DETAILS</a>
-  </div>
-</nav> -->
-
-<!-- <h2 style="text-align: center; margin-top: 20px">
-  SHOP DETAILS
-</h2> -->
-
+<app-header id="top"></app-header>
 <div class="container containerStyle">
-
   <div class="row">
     <div class="col-md-2">
-      <img src="{{ShopIndex.image}}" width="100" height="100"><br/><br/>
-      <img src="{{ShopIndex.image}}" width="100" height="100"><br/><br/>
+      <img src="{{ShopIndex.image}}" width="100" height="100">
+      <br/>
+      <br/>
+      <img src="{{ShopIndex.image}}" width="100" height="100">
+      <br/>
+      <br/>
       <img src="{{ShopIndex.image}}" width="100" height="100">
     </div>
     <div class="col-md-6">
@@ -44,44 +18,47 @@
         {{ShopIndex.title}}
       </h1>
       <p>
-        SKU: 
+        SKU:
         <span style="color: #555555">
-            {{ShopIndex.SKU}}
-        </span><br/>
-        Availability: 
+          {{ShopIndex.SKU}}
+        </span>
+        <br/> Availability:
         <span style="color: #555555">
-            In Stock
-        </span><br/>
+          In Stock
+        </span>
+        <br/>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star-o unchecked"></span>
-        <span >
+        <span>
           &nbsp;
-          <a href="#" >
+          <a href="#">
             4 Reviews
           </a>
           &nbsp;
-          <a href="#" >
+          <a href="#">
             Email to a friend
           </a>
         </span>
       </p>
-      
-    
+
+
       <b style="font-size: 20px">{{ShopIndex.price}}</b>
-      <br/><br/>
+      <br/>
+      <br/>
       <p>
         <span style="color: #555555">
           {{ShopIndex.Description}}
-        </span>     
+        </span>
       </p>
       <b>
         Quantity
-      </b><br/>
+      </b>
+      <br/>
       <input type="number" step="1" min="1" value="1" style="padding-left: 15px; margin-top: 3px;">
-      <span >
+      <span>
         <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;">
           <i class="fa fa-shopping-cart" style="color: white;"></i> ADD TO CART
         </button>
@@ -92,105 +69,74 @@
           <i class="fa fa-retweet"></i>
         </button>
       </span>
-      
+
       <p class="footer">
-        <b>Category:</b> <span class="tag"> {{ShopIndex.category}}</span><br/>
-        <b>Tags:</b> <span class="tag"> {{ShopIndex.Tag}}</span><br/>
+        <b>Category:</b>
+        <span class="tag"> {{ShopIndex.category}}</span>
+        <br/>
+        <b>Tags:</b>
+        <span class="tag"> {{ShopIndex.Tag}}</span>
+        <br/>
         <b>
-          Share: 
+          Share:
           <span>
-              <i class="fa fa-facebook"></i>&nbsp;
-              <i class="fa fa-twitter"></i>&nbsp;
-              <i class="fa fa-pinterest"></i>&nbsp;
-              <i class="fa fa-google-plus"></i>&nbsp;
-              <i class="fa fa-linkedin"></i>&nbsp;
-              <i class="fa fa-reddit"></i>
+            <i class="fa fa-facebook"></i>&nbsp;
+            <i class="fa fa-twitter"></i>&nbsp;
+            <i class="fa fa-pinterest"></i>&nbsp;
+            <i class="fa fa-google-plus"></i>&nbsp;
+            <i class="fa fa-linkedin"></i>&nbsp;
+            <i class="fa fa-reddit"></i>
           </span>
         </b>
       </p>
-      
+
     </div>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-default accordion-btn " style="font-family: ubuntu, sans-serif" (click)="check()" [ngClass]="isClicked? 'success' : 'danger'"
+              data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Description
+            </button>
+            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check1()"
+              [ngClass]="isClicked1? 'success' : 'danger'" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Additional Information
+            </button>
+            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check2()"
+              [ngClass]="isClicked2? 'success' : 'danger'" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              REVIEWS (1)
+            </button>
+            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check3()"
+              [ngClass]="isClicked3? 'success' : 'danger'" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Custom TAB
+            </button>
+          </h5>
+        </div>
 
-    <!-- <div class="col-md-3">
-      <img src="{{ShopIndex.image}}" width="300" height="400">
-    </div>
-    <div class="col-md-7 title">
-      <h5>
-        {{ShopIndex.title}}
-      </h5>
-      <p>
-        SKU: {{ShopIndex.SKU}}
-      </p>
-      <h6>
-        {{ShopIndex.price}}
-      </h6>
-      <h6>
-        <p>
-          {{ShopIndex.Description}}
-        </p>
-      </h6>
-      <h5>
-        Quantity
-      </h5>
-
-      <input type="number">
-      <br/>
-      <button type="submit" class="btn btn-dark btn-lg ">
-          <i class="fa fa-shopping-cart"></i> ADD TO CART
-      </button>
-
-      <p class="footer">
-        Category: {{ShopIndex.category}}
-      </p>
-      <p>
-        Tags: {{ShopIndex.Tag}}
-      </p>
-    </div>
-  </div> -->
-
-
-
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn btn-default accordion-btn " style="font-family: ubuntu, sans-serif" (click)="check()" [ngClass]="isClicked? 'success' : 'danger'"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
             Description
-          </button>
-          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif"  data-toggle="collapse" (click)="check1()" [ngClass]="isClicked1? 'success' : 'danger'" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
             Additional Information
-          </button>
-          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check2()" [ngClass]="isClicked2? 'success' : 'danger'" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            REVIEWS (1)
-          </button>
-          <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif"  data-toggle="collapse" (click)="check3()" [ngClass]="isClicked3? 'success' : 'danger'" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            Custom TAB
-          </button>
-        </h5>
-      </div>
-  
-      <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          Description
+          </div>
         </div>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          Additional Information
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            REVIEWS
+          </div>
         </div>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          REVIEWS
-        </div>
-      </div>
-      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-          CUSTOM TAB
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            CUSTOM TAB
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
+  <a type="button" href="{{pageurl.url}}#top" class="btn btn-dark" style="float: right; ">
+    <i class="fa fa-arrow-up"></i>
+  </a>

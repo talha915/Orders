@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   private isUserLoggedIn;
   
-  constructor() {
+  constructor(public router: Router) {
     this.isUserLoggedIn = false;
   }
 
@@ -24,6 +25,7 @@ export class UserService {
       return true;
     }
     else{
+      this.router.navigateByUrl('/');
       return false;
     }
   }

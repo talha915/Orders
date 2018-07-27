@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ShopsService } from '../Services/shops.service';
 import { shop } from '../Data/Shop';
 import { HeaderComponent } from '../header/header.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-shops-details',
@@ -17,22 +18,31 @@ export class ShopsDetailsComponent implements OnInit {
   public isClicked1 = false;
   public isClicked2 = false;
   public isClicked3 = false;
-  constructor(public service: ShopsService, private route: ActivatedRoute) {
+  subscription: Subscription;
+  public message;
+  public mydata;
+  public pageurl;
+  constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router) {
     this.data = this.service.getData();
     this.shopData = shop; 
     this.ShopIndex = this.shopData[this.data];
 
+    this.router.events  
+    .filter(event => event instanceof NavigationEnd)  
+    .subscribe(e => {    
+      //console.log('prev:', this.previousUrl);    
+      //this.previousUrl = e.url; 
+      this.pageurl = e; 
+      console.log("Page Url: ", this.pageurl);
+    });
+
     this.route.params.subscribe(params=>{
       console.log("Params....", params);
     })
-    
+
    }
 
   ngOnInit() {
-
-    
-
-
     console.log("Datttta", this.data);
     console.log("SHOPDATA...>>", this.shopData);
     console.log("ShopIndex", this.ShopIndex);
