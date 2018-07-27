@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { ShopsService } from '../Services/shops.service';
 import { shop } from '../Data/Shop';
 import { HeaderComponent } from '../header/header.component';
@@ -19,9 +19,13 @@ export class ShopsDetailsComponent implements OnInit {
   public isClicked2 = false;
   public isClicked3 = false;
   subscription: Subscription;
-  public message;
+  //public message;
   public mydata;
   public pageurl;
+  public cartvalue;
+  public wishlist;
+  
+
   constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router) {
     this.data = this.service.getData();
     this.shopData = shop; 
@@ -90,5 +94,13 @@ export class ShopsDetailsComponent implements OnInit {
       this.isClicked2 = false;
     }
     console.log("Status of Button: ", this.isClicked3);
+  }
+
+  cartList(){
+    console.log("Cart value: ", this.cartvalue);
+  }
+
+  wishList(){
+    this.wishlist = "Added";
   }
 }

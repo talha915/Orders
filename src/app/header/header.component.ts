@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+
+  @Input() message: string;
+  @Input() wishlist: string;
   constructor(public service: UserService, public router: Router) { }
 
   ngOnInit() {
