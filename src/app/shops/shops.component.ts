@@ -5,6 +5,7 @@ import { ShopsService } from '../Services/shops.service';
 import { HeaderComponent } from '../header/header.component';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { CardsComponent } from '../cards/cards.component';
 import {Observable} from 'rxjs/Rx';
 @Component({
   selector: 'app-shops',
@@ -25,8 +26,6 @@ export class ShopsComponent implements OnInit {
     this.router.events  
     .filter(event => event instanceof NavigationEnd)  
     .subscribe(e => {    
-      //console.log('prev:', this.previousUrl);    
-      //this.previousUrl = e.url; 
       this.pageurl = e; 
       console.log("Page Url: ", this.pageurl);
     });
@@ -39,13 +38,6 @@ export class ShopsComponent implements OnInit {
     });
   }
 
-  addtocart(index){
-    this.service.setData(index);
-    //this.objservice.setObject(this.shopData[index]);
-    console.log("Index: ", index);
-    debugger;
-    console.log("this.shop Object", this.shopData[index]);
-    this.router.navigateByUrl('ShopsDetails/' + index);
-  }
+ 
 
 }

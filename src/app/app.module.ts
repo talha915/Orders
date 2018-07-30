@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import {ScrollToModule} from 'ng2-scroll-to';
@@ -21,6 +23,9 @@ import { ShopdetailssidebarComponent } from './shopdetailssidebar/shopdetailssid
 import { ShopdetailssidebarbuttonComponent } from './shopdetailssidebarbutton/shopdetailssidebarbutton.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccordionfooterComponent } from './accordionfooter/accordionfooter.component';
+import { CardsComponent } from './cards/cards.component';
+import { CardmodalComponent } from './cardmodal/cardmodal.component';
+import { CardsService } from './cards.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +41,15 @@ import { AccordionfooterComponent } from './accordionfooter/accordionfooter.comp
     ShopdetailssidebarComponent,
     ShopdetailssidebarbuttonComponent,
     FooterComponent,
-    AccordionfooterComponent
+    AccordionfooterComponent,
+    CardsComponent,
+    CardmodalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    CommonModule,
+    BootstrapModalModule,
     FormsModule,
     RouterModule.forRoot([
       {
@@ -71,9 +80,13 @@ import { AccordionfooterComponent } from './accordionfooter/accordionfooter.comp
       }
     ]),
     Ng4LoadingSpinnerModule.forRoot(),
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    BootstrapModalModule.forRoot({container:document.body})
   ],
-  providers: [UserService],
+  entryComponents: [
+    CardmodalComponent
+  ],
+  providers: [UserService, CardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

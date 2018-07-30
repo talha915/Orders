@@ -1,0 +1,45 @@
+.center-block {
+    float:none;
+}
+
+.containers {
+  position: relative;
+}
+
+button{
+  margin-left: 2px;
+  background-color: white;
+  border-radius: 0px;
+}
+
+div {
+  cursor: pointer;
+}
+
+.containerButtons{
+  visibility: hidden;
+  margin-left: 8px;
+}
+
+
+i {
+  color: grey;  
+  font-weight: 2;
+  font-size: 14px;
+}
+
+button:hover{
+  background-color: #282828;
+}
+
+button:hover > i{
+  color: wheat;
+}
+
+.card-img-overlay:hover > .containerButtons{
+  visibility: visible;
+}
+
+a {
+  float: right;
+}

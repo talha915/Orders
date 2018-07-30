@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShopdetailssidebarComponent implements OnInit {
 
-  constructor() { }
+  public cartDatavalue;
   @Input() ShopIndex: string;
+  constructor() {
+    console.log("Cart Value:-", this.cartDatavalue);
+   }
+  
   ngOnInit() {
+    
   }
 
 }

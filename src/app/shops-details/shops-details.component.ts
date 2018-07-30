@@ -29,7 +29,7 @@ export class ShopsDetailsComponent implements OnInit {
   //public message;
   public mydata;
   public pageurl;
-  public cartvalue = 0;
+  public cartvalue;
   public wishlist;
   public wishlistData;
   public carts;

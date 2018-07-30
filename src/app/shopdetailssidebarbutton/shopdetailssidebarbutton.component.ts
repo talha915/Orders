@@ -25,8 +25,8 @@ export class ShopdetailssidebarbuttonComponent implements OnInit {
 
   wishList(){
     this.wishlist = "Added";
-    console.log("this.wishlist....!!", this.wishlist);
-    this.detailService.setData(this.wishlist);
+    console.log("this.wishlist....!!", this.cartvalue);
+    this.detailService.setData(this.cartvalue);
   }
 
   sendMessage() {

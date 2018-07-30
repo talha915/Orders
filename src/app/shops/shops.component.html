@@ -2,46 +2,7 @@
 <div *ngIf="mytick>=4">
   <app-header id ="top"></app-header>
   <div class="container" >
-    <div class="row">
-      <div class="col-md-3" *ngFor="let data of shopData; let i =index">
-        <div class="card" style="width: 18rem; border: none;margin-left: 1px" (click)="addtocart(i)">
-          <div class="containers">
-            <div class="card card-inverse " style="max-width: 350px;border:none">
-              <img class="card-img-top" src={{data.image}} width="250" height="300">
-              <div class="card-img-overlay">
-                <div class="containerButtons" style="margin-top: 245px;">
-                  <button type="button" class="btn btn-default btn-sm">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button type="button" class="btn btn-default btn-sm">
-                    <i class="fa fa-retweet"></i>
-                  </button>
-                  <button type="button" class="btn btn-default btn-sm">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-default btn-sm" style="font-family: ubuntu, sans-serif; ">
-                    <i class="fa fa-shopping-cart"> ADD TO CART</i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="card-body" style="text-align: center; ">
-              <p style="color: grey; font-family: ubuntu, sans-serif;">
-                {{data.title}}
-              </p>
-              <p style="font-family: ubuntu, sans-serif;">
-                {{data.Tag}}
-              </p>
-              <p>
-                <b style="font-family: ubuntu, sans-serif;">
-                  {{data.price}}
-                </b>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-cards></app-cards>
   </div>
   <a type="button" href="{{pageurl.url}}#top" class="btn btn-dark" >
     <i class="fa fa-arrow-up"></i>
