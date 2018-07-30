@@ -3,7 +3,14 @@ import { ShopsService } from '../Services/shops.service';
 import { shop } from '../Data/Shop';
 import { HeaderComponent } from '../header/header.component';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ShopsmallimageComponent } from '../shopsmallimage/shopsmallimage.component';
+import { ShoplargeimageComponent } from '../shoplargeimage/shoplargeimage.component';
+import { ShopdetailssidebarComponent } from '../shopdetailssidebar/shopdetailssidebar.component';
+import { ShopdetailssidebarbuttonComponent } from '../shopdetailssidebarbutton/shopdetailssidebarbutton.component';
+import { FooterComponent } from '../footer/footer.component';
+import { AccordionfooterComponent } from '../accordionfooter/accordionfooter.component';
 import { Subscription } from 'rxjs';
+import { ShopdetailsService } from '../shopdetails.service';
 
 @Component({
   selector: 'app-shops-details',
@@ -22,11 +29,12 @@ export class ShopsDetailsComponent implements OnInit {
   //public message;
   public mydata;
   public pageurl;
-  public cartvalue;
+  public cartvalue = 0;
   public wishlist;
-  
-
-  constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router) {
+  public wishlistData;
+  public carts;
+  constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router
+  , public detailService: ShopdetailsService) {
     this.data = this.service.getData();
     this.shopData = shop; 
     this.ShopIndex = this.shopData[this.data];
@@ -97,10 +105,16 @@ export class ShopsDetailsComponent implements OnInit {
   }
 
   cartList(){
+    this.carts = this.detailService.setData(this.cartvalue);
     console.log("Cart value: ", this.cartvalue);
   }
 
   wishList(){
     this.wishlist = "Added";
+  }
+
+  receiveMessage($event) {
+    console.log("this.wishlistData", this.wishlistData);
+    this.wishlistData = $event;
   }
 }

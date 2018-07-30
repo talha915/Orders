@@ -1,0 +1,146 @@
+.containerStyle{
+    margin-top: 5%;
+}
+
+.title{
+    margin-left: 15px;
+    
+}
+
+.footer{
+    margin-top: 30px;
+}
+
+button[type=submit] {
+    margin-top: 10px;
+    width: 208px;
+    border-radius: 0px;
+}
+
+button {
+    border-radius: 0px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+button[type=submit]:hover{
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+}
+
+button[type=button]:hover {
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+}
+
+input[type=number] {
+    opacity: 0.6;
+}
+
+input[type=number]:hover {
+    opacity: 0.8;
+}
+
+b{
+    font-family: ubuntu, sans-serif;
+    font-size: 15px;
+}
+
+p{
+    font-family: ubuntu, sans-serif;
+    font-size: 15px;
+}
+
+h1{
+    font-family: ubuntu, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+sku{
+    padding: 0 0 0 3px;
+    display: inline-block;
+    font-weight: normal;
+}
+
+.checked {
+    color: yellow;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+.unchecked {
+    color: yellow;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+a:hover{
+    color: #27af7d;
+}
+
+i {
+    color: gray;  
+    font-weight: 2;
+    font-size: 12px;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+.containers{
+    position: relative;
+    background-color: white;
+    height: 25px;
+}
+
+.containers:hover{
+    background-color: #27af7d;
+}
+
+.accordion-btn{
+    padding: 20px; 
+}
+
+.accordion-btn:hover{
+    color: white;
+}
+
+
+button:hover > i{
+    color: white;
+}
+
+a{
+    color: #555555; 
+    font-size: 15px; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tag:hover {
+    cursor: pointer;
+    color: #27af7d;
+}
+
+span>i:hover {
+    color: #27af7d;
+}
+
+.success {
+    background-color: #27af7d;
+    border: 1px solid #27af7d;
+    color: white;
+}
+
+.danger {
+    background-color: azure;
+    color: black;
+}
+
+.danger:hover {
+    background-color: #27af7d;
+    color: white;
+}

@@ -15,6 +15,12 @@ import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
 import { HeaderComponent } from './header/header.component';
+import { ShopsmallimageComponent } from './shopsmallimage/shopsmallimage.component';
+import { ShoplargeimageComponent } from './shoplargeimage/shoplargeimage.component';
+import { ShopdetailssidebarComponent } from './shopdetailssidebar/shopdetailssidebar.component';
+import { ShopdetailssidebarbuttonComponent } from './shopdetailssidebarbutton/shopdetailssidebarbutton.component';
+import { FooterComponent } from './footer/footer.component';
+import { AccordionfooterComponent } from './accordionfooter/accordionfooter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +30,13 @@ import { HeaderComponent } from './header/header.component';
     ShopsComponent,
     DashboardComponent,
     ShopsDetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShopsmallimageComponent,
+    ShoplargeimageComponent,
+    ShopdetailssidebarComponent,
+    ShopdetailssidebarbuttonComponent,
+    FooterComponent,
+    AccordionfooterComponent
   ],
   imports: [
     BrowserModule,

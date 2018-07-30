@@ -1,64 +1,22 @@
-<app-header id="top" [message]="cartvalue" [wishlist]="wishlist"></app-header>
+<app-header id="top" [message]="carts" [wishlist]="wishlist"></app-header>
 <div class="container containerStyle">
   <div class="row">
     <div class="col-md-2">
-      <img src="{{ShopIndex.image}}" width="100" height="100">
-      <br/>
-      <br/>
-      <img src="{{ShopIndex.image}}" width="100" height="100">
-      <br/>
-      <br/>
-      <img src="{{ShopIndex.image}}" width="100" height="100">
+      <app-shopsmallimage [smallimage]="ShopIndex.image"></app-shopsmallimage>
+      <app-shopsmallimage [smallimage]="ShopIndex.image"></app-shopsmallimage>
+      <app-shopsmallimage [smallimage]="ShopIndex.image"></app-shopsmallimage>
     </div>
     <div class="col-md-6">
-      <img src="{{ShopIndex.image}}" width="400" height="500">
+
+      <app-shoplargeimage [largeimage]="ShopIndex.image"></app-shoplargeimage>
     </div>
     <div class="col-md-4">
-      <h1>
-        {{ShopIndex.title}}
-      </h1>
-      <p>
-        SKU:
-        <span style="color: #555555">
-          {{ShopIndex.SKU}}
-        </span>
-        <br/> Availability:
-        <span style="color: #555555">
-          In Stock
-        </span>
-        <br/>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star-o unchecked"></span>
-        <span>
-          &nbsp;
-          <a href="#">
-            4 Reviews
-          </a>
-          &nbsp;
-          <a href="#">
-            Email to a friend
-          </a>
-        </span>
-      </p>
+      <app-shopdetailssidebar [ShopIndex]="ShopIndex"></app-shopdetailssidebar>
 
-
-      <b style="font-size: 20px">{{ShopIndex.price}}</b>
-      <br/>
-      <br/>
-      <p>
-        <span style="color: #555555">
-          {{ShopIndex.Description}}
-        </span>
-      </p>
-      <b>
-        Quantity
-      </b>
-      <br/>
       <input type="number" step="1" min="1" value="1" style="padding-left: 15px; margin-top: 3px;" [(ngModel)]="cartvalue">
-      <span>
+      <app-shopdetailssidebarbutton></app-shopdetailssidebarbutton>
+
+      <!-- <span>
         <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;" (click)="cartList()">
           <i class="fa fa-shopping-cart" style="color: white;"></i> ADD TO CART
         </button>
@@ -68,75 +26,17 @@
         <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px">
           <i class="fa fa-retweet"></i>
         </button>
-      </span>
+      </span> -->
 
       <p class="footer">
-        <b>Category:</b>
-        <span class="tag"> {{ShopIndex.category}}</span>
-        <br/>
-        <b>Tags:</b>
-        <span class="tag"> {{ShopIndex.Tag}}</span>
-        <br/>
-        <b>
-          Share:
-          <span>
-            <i class="fa fa-facebook"></i>&nbsp;
-            <i class="fa fa-twitter"></i>&nbsp;
-            <i class="fa fa-pinterest"></i>&nbsp;
-            <i class="fa fa-google-plus"></i>&nbsp;
-            <i class="fa fa-linkedin"></i>&nbsp;
-            <i class="fa fa-reddit"></i>
-          </span>
-        </b>
+        <app-footer [ShopIndex]="ShopIndex"></app-footer>
+
       </p>
 
     </div>
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-default accordion-btn " style="font-family: ubuntu, sans-serif" (click)="check()" [ngClass]="isClicked? 'success' : 'danger'"
-              data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Description
-            </button>
-            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check1()"
-              [ngClass]="isClicked1? 'success' : 'danger'" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Additional Information
-            </button>
-            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check2()"
-              [ngClass]="isClicked2? 'success' : 'danger'" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              REVIEWS (1)
-            </button>
-            <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check3()"
-              [ngClass]="isClicked3? 'success' : 'danger'" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Custom TAB
-            </button>
-          </h5>
-        </div>
-
-        <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            Description
-          </div>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            Additional Information
-          </div>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            REVIEWS
-          </div>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-          <div class="card-body">
-            CUSTOM TAB
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-accordionfooter></app-accordionfooter>
   </div>
-  <a type="button" href="{{pageurl.url}}#top" class="btn btn-dark" style="float: right; ">
-    <i class="fa fa-arrow-up"></i>
-  </a>
+</div>
+<a type="button" href="{{pageurl.url}}#top" class="btn btn-dark" style="float: right; ">
+  <i class="fa fa-arrow-up"></i>
+</a>

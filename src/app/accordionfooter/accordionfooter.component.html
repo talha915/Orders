@@ -1,0 +1,45 @@
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-default accordion-btn " style="font-family: ubuntu, sans-serif" (click)="check()" [ngClass]="isClicked? 'success' : 'danger'"
+          data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Description
+        </button>
+        <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check1()"
+          [ngClass]="isClicked1? 'success' : 'danger'" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Additional Information
+        </button>
+        <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check2()"
+          [ngClass]="isClicked2? 'success' : 'danger'" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          REVIEWS (1)
+        </button>
+        <button class="btn btn-default collapsed accordion-btn" style="font-family: ubuntu, sans-serif" data-toggle="collapse" (click)="check3()"
+          [ngClass]="isClicked3? 'success' : 'danger'" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Custom TAB
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        Description
+      </div>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        Additional Information
+      </div>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        REVIEWS
+      </div>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        CUSTOM TAB
+      </div>
+    </div>
+  </div>
+</div>
