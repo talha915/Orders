@@ -26,8 +26,6 @@ export class ShopsDetailsComponent implements AfterViewInit {
   public isClicked1 = false;
   public isClicked2 = false;
   public isClicked3 = false;
-  subscription: Subscription;
-  //public message;
   public mydata;
   public pageurl;
   public cartvalue;
@@ -36,13 +34,12 @@ export class ShopsDetailsComponent implements AfterViewInit {
   public carts;
   public cartsValues;
   public cartedvalue;
+  
   @ViewChild(ShopdetailssidebarbuttonComponent) child;
 
-  constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router
-  , public detailService: ShopdetailsService, @Inject(DOCUMENT) private document: Document) {
-    this.data = this.service.getData();
+  constructor(private route: ActivatedRoute, private router: Router) {
+    
     this.shopData = shop; 
-    this.ShopIndex = this.shopData[this.data];
 
     this.router.events  
     .filter(event => event instanceof NavigationEnd)  
@@ -52,9 +49,13 @@ export class ShopsDetailsComponent implements AfterViewInit {
     });
 
     this.route.params.subscribe(params=>{
-      console.log("Params....", params);
+      console.log("Params....", params.slug);
+      this.mydata = params.slug;
+      console.log("MY OWN DATA", this.mydata);
+      console.log("MY CREATED", this.ShopIndex);
     })
 
+    this.ShopIndex = this.shopData[this.mydata];
    }
 
   ngAfterViewInit() {

@@ -7,32 +7,14 @@
       <app-shopsmallimage [smallimage]="ShopIndex.image"></app-shopsmallimage>
     </div>
     <div class="col-md-6">
-
       <app-shoplargeimage [largeimage]="ShopIndex.image"></app-shoplargeimage>
     </div>
     <div class="col-md-4">
       <app-shopdetailssidebar [ShopIndex]="ShopIndex"></app-shopdetailssidebar>
-
-      
       <app-shopdetailssidebarbutton (messageEvent)="receiveMessage($event) "></app-shopdetailssidebarbutton>
-
-      <!-- <span>
-        <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;" (click)="cartList()">
-          <i class="fa fa-shopping-cart" style="color: white;"></i> ADD TO CART
-        </button>
-        <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px" (click)="wishList()">
-          <i class="fa fa-heart-o"></i>
-        </button>
-        <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px">
-          <i class="fa fa-retweet"></i>
-        </button>
-      </span> -->
-
       <p class="footer">
         <app-footer [ShopIndex]="ShopIndex"></app-footer>
-
       </p>
-
     </div>
     <app-accordionfooter></app-accordionfooter>
   </div>

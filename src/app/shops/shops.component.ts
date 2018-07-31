@@ -19,10 +19,9 @@ export class ShopsComponent implements OnInit {
   public indx;
   private mytick;
   public pageurl;
-  constructor(private router: Router, public service: ShopsService, private spinnerService: Ng4LoadingSpinnerService) 
+  constructor(private router: Router, private spinnerService: Ng4LoadingSpinnerService) 
   { 
     this.shopData = shop;
-    console.log("Shop", this.shopData);
     this.router.events  
     .filter(event => event instanceof NavigationEnd)  
     .subscribe(e => {    

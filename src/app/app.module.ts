@@ -24,7 +24,6 @@ import { ShopdetailssidebarbuttonComponent } from './shopdetailssidebarbutton/sh
 import { FooterComponent } from './footer/footer.component';
 import { AccordionfooterComponent } from './accordionfooter/accordionfooter.component';
 import { CardsComponent } from './cards/cards.component';
-import { CardmodalComponent } from './cardmodal/cardmodal.component';
 import { CardsService } from './cards.service';
 @NgModule({
   declarations: [
@@ -42,8 +41,7 @@ import { CardsService } from './cards.service';
     ShopdetailssidebarbuttonComponent,
     FooterComponent,
     AccordionfooterComponent,
-    CardsComponent,
-    CardmodalComponent
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +82,6 @@ import { CardsService } from './cards.service';
     BootstrapModalModule.forRoot({container:document.body})
   ],
   entryComponents: [
-    CardmodalComponent
   ],
   providers: [UserService, CardsService],
   bootstrap: [AppComponent]
