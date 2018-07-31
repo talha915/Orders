@@ -13,6 +13,10 @@ import { CardsService } from '../cards.service';
 export class CardsComponent implements OnInit {
   public shopData;
   public pageurl;
+  public obj;
+  public id;
+  public image;
+  public price;
   constructor(private service: ShopsService,public cardservice: CardsService, private router: Router, private dialogService:DialogService) {
     this.shopData = shop;
     console.log("Shop", this.shopData);
@@ -34,9 +38,16 @@ export class CardsComponent implements OnInit {
     this.service.setData(index);
     //this.objservice.setObject(this.shopData[index]);
     console.log("Index: ", index);
-    console.log("this.shop Object", this.shopData[index]);
     this.router.navigateByUrl('ShopsDetails/' + index);
   }
+
+  changeRoute(index) {
+    this.obj = this.shopData[index];
+    this.id = this.obj.id;
+    this.image = this.obj.image;
+    this.price = this.obj.price;
+  }
+
 
   modalDialog(data) {
     this.cardservice.setcardData(data);

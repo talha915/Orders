@@ -18,22 +18,14 @@ export class HeaderComponent implements OnInit {
   public myData;
   @Input() message: string;
   @Input() wishlist: string;
+  @Input() carts: string;
   public message1;
-  constructor(public service: UserService, public router: Router, public shop: ShopsService,
-  public detailsService: ShopdetailsService) { 
-    //this.cartList = this.shop.getData();
-    //this.wishlistData = this.detailsService.getData();
-    //this.cartList = this.detailsService.getData();
-    this.subscription = this.detailsService.getData().subscribe(message1 => { 
-      this.message1 = message1;
-      
-      console.log("message",this.message)
-      console.log("this.CLothes", this.message)
-    });
+  constructor(public service: UserService, public router: Router, public shop: ShopsService) { 
+    
   }
 
   ngOnInit() {
-    console.log("WishListData", this.wishlistData);
+    
   }
 
   logout(){

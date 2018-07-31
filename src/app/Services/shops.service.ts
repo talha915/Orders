@@ -19,10 +19,5 @@ export class ShopsService {
   getData(){
     return this.data;
   }
-  
-  // getObject(){
-  //   this.ShopData = shop;
-  //   this.shopObj = this.ShopData[this.data];
-  // }
  
 }

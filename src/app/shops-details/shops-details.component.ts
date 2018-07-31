@@ -11,13 +11,14 @@ import { FooterComponent } from '../footer/footer.component';
 import { AccordionfooterComponent } from '../accordionfooter/accordionfooter.component';
 import { Subscription } from 'rxjs';
 import { ShopdetailsService } from '../shopdetails.service';
-
+import { DOCUMENT } from '@angular/platform-browser';
+import { Inject} from "@angular/core";
 @Component({
   selector: 'app-shops-details',
   templateUrl: './shops-details.component.html',
   styleUrls: ['./shops-details.component.css']
 })
-export class ShopsDetailsComponent implements OnInit {
+export class ShopsDetailsComponent implements AfterViewInit {
   public data;
   public shopData;
   public ShopIndex;
@@ -33,8 +34,12 @@ export class ShopsDetailsComponent implements OnInit {
   public wishlist;
   public wishlistData;
   public carts;
+  public cartsValues;
+  public cartedvalue;
+  @ViewChild(ShopdetailssidebarbuttonComponent) child;
+
   constructor(public service: ShopsService, private route: ActivatedRoute, private router: Router
-  , public detailService: ShopdetailsService) {
+  , public detailService: ShopdetailsService, @Inject(DOCUMENT) private document: Document) {
     this.data = this.service.getData();
     this.shopData = shop; 
     this.ShopIndex = this.shopData[this.data];
@@ -42,8 +47,6 @@ export class ShopsDetailsComponent implements OnInit {
     this.router.events  
     .filter(event => event instanceof NavigationEnd)  
     .subscribe(e => {    
-      //console.log('prev:', this.previousUrl);    
-      //this.previousUrl = e.url; 
       this.pageurl = e; 
       console.log("Page Url: ", this.pageurl);
     });
@@ -54,67 +57,21 @@ export class ShopsDetailsComponent implements OnInit {
 
    }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.cartsValues = this.child.cartvalue;
+    console.log("Received,..", this.cartsValues);
     console.log("Datttta", this.data);
     console.log("SHOPDATA...>>", this.shopData);
     console.log("ShopIndex", this.ShopIndex);
   }
-
-  btnchange(){
-    console.log("Change Color");
-  }
-
-  check(){
-    this.isClicked = !this.isClicked;
-    if(this.isClicked === false || this.isClicked === true) {
-      this.isClicked1 = false;
-      this.isClicked2 = false;
-      this.isClicked3 = false;
-    }
-    console.log("Status of Button: ", this.isClicked);
-  }
-
-  check1(){
-    this.isClicked1 = !this.isClicked1;
-    if(this.isClicked1 === true) {
-      this.isClicked = false;
-      this.isClicked2 = false;
-      this.isClicked3 = false;
-    }
-    console.log("Status of Button: ", this.isClicked1);
-  }
-
-  check2(){
-    this.isClicked2 = !this.isClicked2;
-    if(this.isClicked2 === true) {
-      this.isClicked = false;
-      this.isClicked1 = false;
-      this.isClicked3 = false;
-    }
-    console.log("Status of Button: ", this.isClicked2);
-  }
-
-  check3(){
-    this.isClicked3 = !this.isClicked3;
-    if(this.isClicked3 === true) {
-      this.isClicked = false;
-      this.isClicked1 = false;
-      this.isClicked2 = false;
-    }
-    console.log("Status of Button: ", this.isClicked3);
-  }
-
-  cartList(){
-    this.carts = this.detailService.setData(this.cartvalue);
-    console.log("Cart value: ", this.cartvalue);
-  }
-
-  wishList(){
-    this.wishlist = "Added";
-  }
-
+  
   receiveMessage($event) {
-    console.log("this.wishlistData", this.wishlistData);
-    this.wishlistData = $event;
+    this.cartedvalue = $event;
+    this.wishlist = this.cartedvalue.wish;
+    this.carts = this.cartedvalue.cart;
+    console.log("Wishlist....", this.wishlist, this.carts);
+
+    console.log("Receive message: event:-", this.cartedvalue);
   }
+
 }

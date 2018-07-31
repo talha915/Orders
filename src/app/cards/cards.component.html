@@ -2,7 +2,7 @@
   <div class="col-md-3" *ngFor="let data of shopData; let i =index">
     <div class="card" style="width: 18rem; border: none;margin-left: 1px">
       <div class="containers">
-        <div class="card card-inverse " style="max-width: 350px;border:none" (click)="modalDialog(i)">
+        <div class="card card-inverse " style="max-width: 350px;border:none" (click)="changeRoute(i)" data-toggle="modal" data-target="#myModal">
           <img class="card-img-top" src={{data.image}} width="250" height="300" >
           <div class="card-img-overlay">
             <div class="containerButtons" style="margin-top: 245px;">
@@ -30,7 +30,7 @@
           </p>
           <p>
             <b style="font-family: ubuntu, sans-serif;">
-              {{data.price}}
+              {{data.price}} 
             </b>
           </p>
         </div>
@@ -38,3 +38,24 @@
     </div>
   </div>
 </div>
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body" style="text-align: center">
+        <img src="{{image}}" width="250" height="300">
+      </div>
+
+      <div class="modal-footer" style="text-align: center">
+        <h3 style="margin-right: 170px">{{price}}</h3>
+      </div>
+    </div>
+  </div>
+</div> 

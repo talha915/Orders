@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopdetailsService } from '../shopdetails.service';
-
+import { ShopsDetailsComponent } from '../shops-details/shops-details.component';
 @Component({
   selector: 'app-shopdetailssidebarbutton',
   templateUrl: './shopdetailssidebarbutton.component.html',
@@ -11,27 +11,24 @@ export class ShopdetailssidebarbuttonComponent implements OnInit {
   public cartvalue;
   public wishlist;
 
-
-  @Output() messageEvent = new EventEmitter<string>();
+  @Output() messageEvent = new EventEmitter<any>();
+  @Output() WishlistEvent = new EventEmitter<string>();
 
   constructor(public detailService: ShopdetailsService) { }
 
   ngOnInit() {
   }
 
-  cartList(){
-    console.log("Cart value: ", this.cartvalue);
+  
+  changedata(){
+    console.log("CHange Data.", this.cartvalue);
   }
 
-  wishList(){
-    this.wishlist = "Added";
-    console.log("this.wishlist....!!", this.cartvalue);
-    this.detailService.setData(this.cartvalue);
-  }
-
-  sendMessage() {
-    
-    this.messageEvent.emit(this.wishlist);
-    console.log("Wishlist", this.wishlist);
+  sendMessage() { 
+    var list = {
+      wish: 'Added',
+      cart: this.cartvalue
+    }
+    this.messageEvent.emit(list);
   }
 }

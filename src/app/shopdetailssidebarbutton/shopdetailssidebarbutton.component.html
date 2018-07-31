@@ -1,10 +1,10 @@
-<input type="number" step="1" min="1" value="1" style="padding-left: 15px; margin-top: 3px;" [(ngModel)]="cartvalue">
+<input type="number" step="1" min="1" value="1" style="padding-left: 15px; margin-top: 3px;" [(ngModel)]="cartvalue" (change)="changedata()">
 <span>
-  <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;" (click)="cartList()">
+  <button type="submit" class="btn btn-dark btn-lg " style="font-family: ubuntu, sans-serif; font-size: 15px;" (click)="sendMessage()">
     <i class="fa fa-shopping-cart" style="color: white;"></i> ADD TO CART
   </button>
   <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px"
-    (click)="wishList()">
+    (click)="sendMessage()">
     <i class="fa fa-heart-o"></i>
   </button>
   <button type="button" class="btn btn-default btn-lg" style="padding-top: 2px; padding-left: 12px; padding-right: 10px; margin-left: 10px">
