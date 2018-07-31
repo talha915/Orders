@@ -24,7 +24,6 @@ import { ShopdetailssidebarbuttonComponent } from './shopdetailssidebarbutton/sh
 import { FooterComponent } from './footer/footer.component';
 import { AccordionfooterComponent } from './accordionfooter/accordionfooter.component';
 import { CardsComponent } from './cards/cards.component';
-import { CardsService } from './cards.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +82,7 @@ import { CardsService } from './cards.service';
   ],
   entryComponents: [
   ],
-  providers: [UserService, CardsService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

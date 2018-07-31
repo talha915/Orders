@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DialogComponent, DialogService} from 'ng2-bootstrap-modal';
 import { shop } from '../Data/Shop';
-import { ShopsService } from '../Services/shops.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { CardsService } from '../cards.service';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',

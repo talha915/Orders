@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ShopdetailsService } from '../shopdetails.service';
 import { ShopsDetailsComponent } from '../shops-details/shops-details.component';
 @Component({
   selector: 'app-shopdetailssidebarbutton',
@@ -14,7 +13,7 @@ export class ShopdetailssidebarbuttonComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
   @Output() WishlistEvent = new EventEmitter<string>();
 
-  constructor(public detailService: ShopdetailsService) { }
+  constructor() { }
 
   ngOnInit() {
   }

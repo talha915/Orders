@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { shop } from '../Data/Shop';
-import { ShopsService } from '../Services/shops.service';
 import { HeaderComponent } from '../header/header.component';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';

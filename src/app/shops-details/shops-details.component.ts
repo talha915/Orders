@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
-import { ShopsService } from '../Services/shops.service';
 import { shop } from '../Data/Shop';
 import { HeaderComponent } from '../header/header.component';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
@@ -10,7 +9,6 @@ import { ShopdetailssidebarbuttonComponent } from '../shopdetailssidebarbutton/s
 import { FooterComponent } from '../footer/footer.component';
 import { AccordionfooterComponent } from '../accordionfooter/accordionfooter.component';
 import { Subscription } from 'rxjs';
-import { ShopdetailsService } from '../shopdetails.service';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Inject} from "@angular/core";
 @Component({
